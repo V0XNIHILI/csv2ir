@@ -32,4 +32,4 @@ replace `input_folder_name` and `output_folder_name` by their actual values.
 ## 🚀 How fast is it?
 
 I tried my best to make the program as fast as possible. On eight processing cores, the program
-needs 1 minute and 9 seconds to process 506 images; in other words, 0.136 seconds per image.
+needs about 10 minutes to process 506 images; in other words, plusminus 1.2 seconds per image.

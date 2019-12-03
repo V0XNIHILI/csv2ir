@@ -3,3 +3,4 @@ csv/**
 ir/**
 .DS_Store
 .vscode
+sample_output

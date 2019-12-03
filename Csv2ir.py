@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+# Designed and forged from the ground up by Douwe den Blanken
+
 import multiprocessing as mp
 
 import os
@@ -48,6 +50,9 @@ class Csv2ir:
 
                     process_counter += 1
 
+        pool.close()
+        pool.join()
+
     @staticmethod
     def create_ir_image(file_index, temp_2d_list, file_name, output_folder):
         img_width = len(temp_2d_list[0])
@@ -55,9 +60,9 @@ class Csv2ir:
 
         temp_values_1d = array(temp_2d_list).flatten()
 
-        lowest_temp = amin(temp_values_1d)
-        highest_temp = amax(temp_values_1d)
-        half_percentile_temp = percentile(temp_values_1d, 50, axis=0)
+        lowest_temp = amin(temp_values_1d) # for 2D: 7.6
+        highest_temp = amax(temp_values_1d) # for 2D: 12.1
+        half_percentile_temp = percentile(temp_values_1d, 50, axis=0) # for 2D: 9.85
 
         # 1D color array, in the form of: R, G, B, R, G, B ....
         # if not set to uint8, and bitdepth=8 at png.Writer() line, the image will not show up
