@@ -5,7 +5,7 @@
 This repository contains the `Csv2ir.py` script, which can convert all CSV files in a folder to
 infrared images into another folder.
 
-## ✅ Requirements
+## 📃 Requirements
 
 Please make sure that you have `numpy` installed.
 
