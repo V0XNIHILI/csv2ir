@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/local/bin/python3
 
 import multiprocessing as mp
 
@@ -126,6 +126,7 @@ class Csv2ir:
 input_dir_name = 'csv'
 output_dir_name = 'ir'
 
+# Check if CLI parameters are present
 if len(sys.argv) == 3:
     input_dir_name = sys.argv[1]
     output_dir_name = sys.argv[2]
