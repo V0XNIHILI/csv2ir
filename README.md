@@ -32,12 +32,12 @@ Feature pack. This can be found [here](https://www.microsoft.com/en-us/software-
 ### Easy way
 
 First, make a new folder in the current folder: call it 'csv'. Then, put all of your CSV files into
-that folder. Finally, execute the Csv2ir.py file.
+that folder. Finally, execute the `make_imgs.py` file.
 
 ### Developer way
 
-First, `cd` into the project's root directory and run `chmod +x Csv2ir.py`. Then, to actually
-convert the CSV files to images, run: `Csv2ir input_folder_name output_folder_name`, where you
+First, `cd` into the project's root directory and run `chmod +x make_imgs.py`. Then, to actually
+convert the CSV files to images, run: `make_imgs input_folder_name output_folder_name`, where you
 replace `input_folder_name` and `output_folder_name` by their actual values.
 
 ## 🚀 How fast is it?
