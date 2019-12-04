@@ -1,7 +1,5 @@
 #!/usr/local/bin/python3
 
-# Designed and forged from the ground up by Douwe den Blanken
-
 import multiprocessing as mp
 
 import os
@@ -13,12 +11,14 @@ import sys
 import png
 from numpy import percentile, array, concatenate, amin, amax, append, zeros, uint8
 
+# Designed and forged from the ground up by Douwe den Blanken
 
 class Csv2ir:
     @staticmethod
     def create_images(input_folder_name, output_folder_name):
         # Make sure that the output folder is created, in case it did not yet exist
-        os.mkdir(output_folder_name)
+        if os.path.exists(output_folder_name) == False:
+            os.mkdir(output_folder_name)
 
         pool = mp.Pool(mp.cpu_count())
 
@@ -60,9 +60,10 @@ class Csv2ir:
 
         temp_values_1d = array(temp_2d_list).flatten()
 
-        lowest_temp = amin(temp_values_1d) # for 2D: 7.6
-        highest_temp = amax(temp_values_1d) # for 2D: 12.1
-        half_percentile_temp = percentile(temp_values_1d, 50, axis=0) # for 2D: 9.85
+        lowest_temp = amin(temp_values_1d)  # for 2D: 7.6
+        highest_temp = amax(temp_values_1d)  # for 2D: 12.1
+        half_percentile_temp = percentile(
+            temp_values_1d, 50, axis=0)  # for 2D: 9.85
 
         # 1D color array, in the form of: R, G, B, R, G, B ....
         # if not set to uint8, and bitdepth=8 at png.Writer() line, the image will not show up
@@ -125,15 +126,3 @@ class Csv2ir:
         b_diff = rgb_2[2] - rgb_1[2]
 
         return([rgb_1[0] + int(factor*r_diff), rgb_1[1] + int(factor*g_diff), rgb_1[2] + int(factor*b_diff)])
-
-
-# Default folder names
-input_dir_name = 'csv'
-output_dir_name = 'ir'
-
-# Check if CLI parameters are present
-if len(sys.argv) == 3:
-    input_dir_name = sys.argv[1]
-    output_dir_name = sys.argv[2]
-
-Csv2ir.create_images(input_dir_name, output_dir_name)

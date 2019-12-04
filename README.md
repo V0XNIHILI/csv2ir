@@ -16,6 +16,17 @@ following command:
 pip install pypng
 ```
 
+If you want to create a video from the outputted images, you can use the `make_vid.py` script also
+located in this repo. For this, you'll need to install `opencv-python`:
+
+```
+pip install opencv-python
+```
+
+If you are using Windows, check if you have Windows Media Player installed. If you don't have it,
+it is impossible for you to create a video. You'll first need to download and install the Media
+Feature pack. This can be found [here](https://www.microsoft.com/en-us/software-download/mediafeaturepack).
+
 ## 🎯 How to run
 
 ### Easy way
