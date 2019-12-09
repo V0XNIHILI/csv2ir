@@ -12,7 +12,7 @@ class Imgs2vid:
     def create_video(input_folder_name, output_file_name, fps):
         frame_array = []
 
-        files = [f for f in os.listdir(input_folder_name) if isfile(join(pathIn, f))]
+        files = [f for f in os.listdir(input_folder_name) if isfile(join(input_folder_name, f))]
 
         # for sorting the file names properly
         files.sort(key=lambda x: x[5:-4])
@@ -20,7 +20,7 @@ class Imgs2vid:
 
         frame_array = []
 
-        files = [f for f in os.listdir(input_folder_name) if isfile(join(pathIn, f))]
+        files = [f for f in os.listdir(input_folder_name) if isfile(join(input_folder_name, f))]
 
         # for sorting the file names properly
         files.sort(key=lambda x: x[5:-4])

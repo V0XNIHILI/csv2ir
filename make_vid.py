@@ -4,7 +4,7 @@ from Imgs2vid import Imgs2vid
 
 # Default output and input names
 input_dir_name = './ir/'
-output_dir_name = 'video.avi'
+output_file_name = 'video.avi'
 fps = 15
 
 # Check if CLI parameters are present
